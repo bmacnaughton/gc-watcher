@@ -4,7 +4,7 @@
       "target_name": "gc-watcher",
       "cflags!": [ "-fno-exceptions" ],
       "cflags_cc!": [ "-fno-exceptions" ],
-      "sources": [ "gc-watcher.cc" ],
+      "sources": [ "src/gc-watcher.cc" ],
       "include_dirs": [
         "<!@(node -p \"require('node-addon-api').include\")"
       ],
