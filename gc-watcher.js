@@ -3,7 +3,8 @@
 /* eslint-disable no-console */
 const watcher = require('bindings')('gc-watcher');
 
-const callbacks = process.argv.indexOf('callbacks') > 1;
+const throwError = process.argv.indexOf('error') > 1;
+const callbacks = throwError || process.argv.indexOf('callbacks') > 1;
 
 let status;
 if (callbacks) {
@@ -20,7 +21,7 @@ function after (type, flags, deltaTime, gcCount, error) {
   console.log('<<', ...arguments)
   console.log('type', type, 'error', error, 'et', deltaTime, 'cet', cumET);
   try {
-    //throw new Error('oops');
+    if (throwError) throw new Error('oops');
   } catch (e) {
     console.log('caught it');
   }
