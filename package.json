@@ -1,0 +1,16 @@
+{
+  "name": "gc-watcher",
+  "version": "1.0.0",
+  "description": "garbage collection watcher",
+  "main": "gc-watcher.js",
+  "license": "ISC",
+  "dependencies": {
+    "bindings": "~1.2.1",
+    "node-addon-api": "^2.0.0"
+  },
+  "scripts": {
+    "test": "node gc-watcher.js",
+    "rebuild": "node-gyp rebuild"
+  },
+  "gypfile": true
+}
